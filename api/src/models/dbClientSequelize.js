@@ -9,6 +9,8 @@ import { Sequelize } from "sequelize";
 // ECMAScript modules (export)
 // Instance de connexion à la base de données Postgres
 export const sequelize = new Sequelize(process.env.PG_URL, {
+  dialect: "postgres",
+  host: process.env.DBHOST,
   define: {
     createdAt: "created_at",
     updatedAt: "updated_at",

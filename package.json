@@ -13,7 +13,9 @@
     "db:seed": "npm run db:seed --prefix api",
     "db:reset": "npm run db:create && npm run db:seed",
     "postinstall": "npm install --prefix client --include=dev",
-    "build": "npm run build --prefix client"
+    "build": "npm run build --prefix client",
+    "test:unit": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --testPathPattern=game.unit.test",
+    "test:spec": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --testPathPattern=spec.test"
   },
   "keywords": [
     "kanban",
@@ -23,5 +25,8 @@
     "API REST"
   ],
   "author": "kanban@oclock.io",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
